@@ -28,3 +28,14 @@ let double2 = function(x) {
 const double = x => x * 2;
 
 console.log(applyOperation(double, 5));
+
+// 
+const makeMultiplier = (n) => {
+  return (x) => x * n;
+}
+
+const doubleNumber = makeMultiplier(2);
+const tripleNumber = makeMultiplier(3);
+
+console.log(doubleNumber(5)); // 결과: 10
+console.log(tripleNumber(5)); // 결과: 15
