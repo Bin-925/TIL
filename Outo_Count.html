@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 2 -->
+    <h2>자동 카운터</h2>
+    <p class="p2">0</p>
+    <span>10이 되면 멈춥니다!</span>
+
+    <script>
+      // 2 자동
+      const p2 = document.querySelector(".p2");
+
+      const autoPlus = function () {
+        let autoCnt = parseInt(p2.innerText);
+        autoCnt++;
+        p2.innerText = autoCnt;
+
+        if (autoCnt <= 9) {
+          autoCnt++;
+        } else {
+          clearInterval(interval);
+        }
+      };
+
+      let interval = setInterval(autoPlus, 100);
+    </script>
+  </body>
+</html>
+
