@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1 -->
+    <h2>수동 카운터</h2>
+    <p class="p1">0</p>
+    <button class="btnPlus">더하기</button>
+    <button class="btnMinus">빼기</button>
+    <button class="btnReset">리셋</button>
+
+    <script>
+      // 1 수동
+      const p1 = document.querySelector(".p1");
+      const btnPlus = document.querySelector(".btnPlus");
+      const btnMinus = document.querySelector(".btnMinus");
+      const btnReset = document.querySelector(".btnReset");
+
+      const changeBtn = function (behaviour) {
+        let cnt = parseInt(p1.innerText)
+        if (behaviour === 'plus') {
+          cnt++
+        } else if (behaviour === 'minus') {
+          cnt--
+        } else if (behaviour === 'reset') {
+          cnt = 0
+        }
+        p1.innerText = cnt;
+      }
+      btnPlus.addEventListener("click", () => changeBtn('plus'))
+      btnMinus.addEventListener("click", () => changeBtn('minus'))
+      btnReset.addEventListener("click", () => changeBtn('reset'))
+    </script>
+  </body>
+</html>
+
